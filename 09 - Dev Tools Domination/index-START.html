@@ -18,28 +18,64 @@
     }
 
     // Regular
+    console.log('Lol');
 
     // Interpolated
+    console.log('This - %s, is a string', 'loltest');
+    console.log(`Way ${'better'} way to do it.`);
 
     // Styled
+    console.log('%c Bold text.', 'font-size:20px; color: green;');
 
     // warning!
+    console.warn('NO WAY!!!')
 
     // Error :|
+    console.error('IT HAPPENS')
 
     // Info
+    console.info('White Chocolate isn`t Chocolate')
 
     // Testing
+    console.assert(5 === 3, 'What happened there?')
 
     // clearing
+    // console.clear();
 
     // Viewing DOM Elements
+    const p = document.querySelector('p');
+    console.log(p);
+    console.dir(p);
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+       console.log(`This is ${dog.name}`);
+       console.log(`${dog.name} is ${dog.age} years old`);
+       console.groupEnd(`${dog.name}`);
+    });
 
     // counting
+    // console.count('Wes');
+    // console.count('Wes');
+    // console.count('LOL');
+    // console.count('Wes');
+    // console.count('LOL');
+    // console.count('LOL');
+    // console.count('Wes');
+    // console.count('LOL');
+    // console.count('LOL');
 
     // timing
+    console.time('Fetching data');
+    fetch('https://api.github.com/users/emptyfile')
+    .then(data => data.json())
+    .then(data => {
+      console.timeEnd('Fetching data');
+      console.log(data);
+    });
+
+    console.table(dogs);
 
   </script>
 </body>
